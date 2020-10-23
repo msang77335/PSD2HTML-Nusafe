@@ -149,6 +149,54 @@ body {
     font-weight: bold;
   }
 }
+.bg-loading{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  &.hiden{
+    display: none;
+  }
+}
+.loading{
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 2s linear infinite;
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg), translate(-50%, -50%);
+    }
+    100%{
+      transform: rotate(360deg), translate(-50%, -50%);
+    }
+  }
+  circle{
+    fill: none;
+    stroke-width: 3;
+    stroke: $color--primary;
+    stroke-dasharray: 115;
+    stroke-dashoffset: 115;
+    stroke-linecap: round;
+    animation: load 2s linear infinite;
+    @keyframes load {
+      0%{
+        stroke-dashoffset: 115;
+      }
+      50%{
+        stroke-dashoffset: 0;
+      }
+      50.1%{
+        stroke-dashoffset: 230;
+      }
+      100%{
+        stroke-dashoffset: 115;
+      }
+  }
+}
+}
 .scroll-top{
   position: fixed;
   z-index: 999;

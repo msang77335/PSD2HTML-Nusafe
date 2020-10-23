@@ -4,6 +4,12 @@ const bars = document.querySelector(".header__bars");
 
 const menu = document.querySelector(".menu");
 
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".bg-loading");
+  console.log(loader);
+  loader.classList.add("hiden");
+});
+
 bars.addEventListener("click", function () {
   if (menu.style.maxHeight == 0 || menu.style.maxHeight == "0px") {
     header.classList.add("open");
