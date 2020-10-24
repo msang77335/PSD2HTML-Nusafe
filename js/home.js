@@ -5,9 +5,18 @@ const bars = document.querySelector(".header__bars");
 const menu = document.querySelector(".menu");
 
 window.addEventListener("load", function () {
-  const loader = document.querySelector(".bg-loading");
-  console.log(loader);
-  loader.classList.add("hiden");
+  function fadeOut(el) {
+    el.style.opacity = 1;
+    (function fade() {
+      if ((el.style.opacity -= 0.05) < 0) {
+        el.style.display = "none";
+      } else {
+        requestAnimationFrame(fade);
+      }
+    })();
+  }
+  const loader = document.querySelector(".loader-bg");
+  fadeOut(loader);
 });
 
 bars.addEventListener("click", function () {
